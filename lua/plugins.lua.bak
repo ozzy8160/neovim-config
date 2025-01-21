@@ -1,0 +1,32 @@
+return {
+
+    {
+	"camspiers/luarocks",
+	dependencies = { "rcarriga/nvim-notify" },
+	opts.rocks.enable = true 
+        },
+    },
+
+    {
+	"nvim-lua/plenary.nvim",
+	name = "plenary"
+    },
+
+    {
+	'nvim-telescope/telescope.nvim', tag = '0.1.8',
+	dependencies = { "plenary" }
+    },
+
+    {
+	"ThePrimeagen/harpoon",
+	branch = "harpoon2",
+	dependencies = { "plenary" }
+    },
+
+    {
+	"nvim-treesitter/nvim-treesitter",
+	build = ":TSUpdate",
+    },
+
+
+}
