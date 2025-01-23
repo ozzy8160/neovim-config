@@ -2,12 +2,13 @@ vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
+vim.wo.relativenumber = true
 require("config.lazy")
 require("config.keymaps")
 
 local config = require("nvim-treesitter.configs")
 config.setup({
-  ensure_installed = {"bash", "css", "dockerfile", "hyprlang", "lua", "luadoc", "nix", "markdown", "vim", "vimdoc", "xml", "yaml",},
+  ensure_installed = {"bash", "css", "dockerfile", "hyprlang", "lua", "luadoc", "nix", "markdown", "vim", "vimdoc", "xml", "yaml"},
   sync_install = false,
   highlight = {enable = true},
   indent = {enable = true},
@@ -31,9 +32,15 @@ require("nightly").setup({
   transparent = true,
   styles = {
     comments = { italic = true },
-    functions = { italic = false },
+functions = { italic = false },
     variables = { italic = false },
     keywords = { italic = false },
   },
   highlights = {},
+})
+
+
+local config = require('lualine')
+config.setup ({
+  options = { theme = 'dracula' },
 })

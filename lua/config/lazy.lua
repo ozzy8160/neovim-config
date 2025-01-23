@@ -16,7 +16,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("globals")
-require("telescope")
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
