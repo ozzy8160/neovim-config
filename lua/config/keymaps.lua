@@ -7,3 +7,4 @@ vim.keymap.set("n", "<leader>fc", "<cmd>Telescope git commits<cr>", { desc = "Fi
 
 --Undotree keymap
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+
