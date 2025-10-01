@@ -34,7 +34,13 @@ vim.keymap.set("n", "<C-;>", function() harpoon:list():select(5) end)
 vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
 vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
  
-
+-- In your configuration file (e.g., lua/config/whichkey.lua)
+local whichkey = require("which-key")
+whichkey:setup({
+    -- Example: Set a shorter timeout for the popup
+    delay = 300, -- milliseconds
+    -- Other configuration options can be added here
+})
 --require("nightly").setup({
 --  transparent = true,
 --  styles = {
