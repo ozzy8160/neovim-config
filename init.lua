@@ -1,7 +1,9 @@
+--nvim settings--
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
+vim.wo.number = true
 vim.wo.relativenumber = true
 require("config.lazy")
 require("config.keymaps")
@@ -29,7 +31,7 @@ vim.keymap.set("n", "<C-j>", function() harpoon:list():select(2) end)
 vim.keymap.set("n", "<C-k>", function() harpoon:list():select(3) end)
 vim.keymap.set("n", "<C-l>", function() harpoon:list():select(4) end)
 vim.keymap.set("n", "<C-;>", function() harpoon:list():select(5) end)
-
+ 
 -- Toggle previous & next buffers stored within Harpoon list
 vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
 vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
