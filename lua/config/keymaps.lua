@@ -9,6 +9,8 @@ vim.keymap.set("n", "<leader>fc", "<cmd>Telescope git commits<cr>", { desc = "Fi
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 
 --custom keybinds--
+vim.keymap.set('n', '<leader>W', ':wq<CR>')
 vim.keymap.set('n', '<leader>w', ':w<CR>')
 vim.keymap.set('n', '<leader>q', ':q<CR>')
+vim.keymap.set('n', '<leader>Q', ':q!<CR>')
 

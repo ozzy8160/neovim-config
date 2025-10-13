@@ -7,6 +7,17 @@ vim.wo.number = true
 vim.wo.relativenumber = true
 require("config.lazy")
 require("config.keymaps")
+require("nightly").setup({
+  transparent = true,
+  styles = {
+    comments = { italic = true },
+    functions = { italic = false },
+    variables = { italic = false },
+    keywords = { italic = false },
+  },
+  highlights = {},
+})
+vim.cmd[[colorscheme nightly]] 
 require("lualine").setup {
   options = { 
     theme = 'dracula' 
@@ -53,5 +64,5 @@ whichkey:setup({
 --  },
 --  highlights = {},
 --})
-
+ 
 
