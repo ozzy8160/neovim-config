@@ -13,4 +13,9 @@ vim.keymap.set('n', '<leader>W', ':wq<CR>')
 vim.keymap.set('n', '<leader>w', ':w<CR>')
 vim.keymap.set('n', '<leader>q', ':q<CR>')
 vim.keymap.set('n', '<leader>Q', ':q!<CR>')
-
+vim.keymap.set('n', '<leader>cd', ':Ex<CR>')
+vim.keymap.set("n", "<leader>x", function()
+  local file = vim.fn.expand("%:p") -- Get the full path of the current file
+  vim.cmd("!chmod +x " .. vim.fn.shellescape(file)) -- Execute chmod command
+  print("Made " .. file .. " executable.") -- Optional: print a confirmation message
+end, { desc = "Make current file executable" })

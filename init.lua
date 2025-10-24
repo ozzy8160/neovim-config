@@ -5,6 +5,8 @@ vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.wo.number = true
 vim.wo.relativenumber = true
+vim.opt.clipboard = 'unnamedplus'
+vim.opt.cursorline = true
 require("config.lazy")
 require("config.keymaps")
 require("nightly").setup({
