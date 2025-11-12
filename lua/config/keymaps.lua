@@ -1,3 +1,7 @@
+-- Set leader key
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 -- Normal mode mappings
 vim.keymap.set("n", "<leader>c", ":nohlsearch<CR>", { desc = "Clear search highlights" })
 
@@ -20,11 +24,15 @@ vim.keymap.set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete without yankin
 vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Next buffer" })
 vim.keymap.set("n", "<leader>bp", ":bprevious<CR>", { desc = "Previous buffer" })
 
+-- Visual Maps
+vim.keymap.set("v", "<leader>r", "\"hy:%s/<C-r>h//g<left><left>")			-- Replace all instances of highlighted words
+vim.keymap.set("v", "<C-s>", ":sort<CR>")									-- Sort highlighted text in visual mode with Control+S
+
 -- Better window navigation
---vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
---vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to bottom window" })
---vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to top window" })
---vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
+vim.keymap.set("n", "<A-Left>", "<C-w>h", { desc = "Move to left window" })
+vim.keymap.set("n", "<A-Right>", "<C-w>j", { desc = "Move to bottom window" })
+vim.keymap.set("n", "<A-Up>", "<C-w>k", { desc = "Move to top window" })
+vim.keymap.set("n", "<A-Down>", "<C-w>l", { desc = "Move to right window" })
 
 -- Splitting & Resizing
 vim.keymap.set("n", "<leader>sv", ":vsplit<CR>", { desc = "Split window vertically" })
@@ -45,8 +53,8 @@ vim.keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })
 vim.keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
 
 -- Quick file navigation
-vim.keymap.set("n", "<leader>e", ":Explore<CR>", { desc = "Open file explorer" })
-vim.keymap.set("n", "<leader>ff", ":find ", { desc = "Find file" })
+vim.keymap.set("n", "<leader>cd", ":25Lexplore<CR>", { desc = "Open file explorer in 25% vertical view" })
+vim.keymap.set("n", "<leader>FF", ":find ", { desc = "Find file" })
 
 -- Better J behavior
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Join lines and keep cursor position" })
@@ -65,11 +73,10 @@ vim.keymap.set("n", "<leader>fc", "<cmd>Telescope git commits<cr>", { desc = "Fi
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 
 -- My custom keybinds
-vim.keymap.set('n', '<leader>W', ':wq<CR>')
-vim.keymap.set('n', '<leader>w', ':w<CR>')
-vim.keymap.set('n', '<leader>q', ':q<CR>')
-vim.keymap.set('n', '<leader>Q', ':q!<CR>')
-vim.keymap.set('n', '<leader>cd', ':Ex<CR>')
+vim.keymap.set('n', '<leader>wq', ':wq<CR>', { desc = ":write and :quit" })
+vim.keymap.set('n', '<leader>w', ':w<CR>', { desc = ":write" })
+vim.keymap.set('n', '<leader>q', ':q<CR>', { desc = ":quit" })
+vim.keymap.set('n', '<leader>Q', ':q!<CR>', { desc = ":forcequit" })
 vim.keymap.set("n", "<leader>x", function()
   local file = vim.fn.expand("%:p") -- Get the full path of the current file
   vim.cmd("!chmod +x " .. vim.fn.shellescape(file)) -- Execute chmod command

@@ -1,3 +1,6 @@
+--- ============================================================================
+-- OPTIONS
+-- ============================================================================
 -- Basic settings
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -70,8 +73,10 @@ vim.opt.foldlevel = 99                             -- Start with all folds open
 vim.opt.splitbelow = true                          -- Horizontal splits go below
 vim.opt.splitright = true                          -- Vertical splits go right
 
-require("config.lazy")
+-- REQUIRE --
+--require("config.netrw")
 require("config.keymaps")
+require("config.lazy")
 require("nightly").setup({
   transparent = true,
   styles = {
